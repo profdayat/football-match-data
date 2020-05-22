@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Web Football Detail</title>
+  <meta name="description" content="Web Football" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/materialize.min.css">
+  <link rel="stylesheet" href="font/fontface.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#283593" />
+</head>
+
+<body>
+
+  <header>
+    <!-- Navigasi -->
+    <div class="navbar-fixed">
+      <nav class="indigo darken-2" role="navigation">
+        <div class="nav-wrapper container">
+          <a href="#" class="brand-logo center" id="logo-container">Detail</a>
+          <a href="./"><i class="material-icons">arrow_back</i></a>
+
+          <ul class="topnav right hide-on-med-and-down"></ul>
+          <ul class="sidenav" id="nav-mobile"></ul>
+        </div>
+      </nav>
+    </div>
+    <!-- Akhir Navigasi -->
+  </header>
+
+  <main>
+    <div class="container margintop20" id="detail-club"></div>
+    <h3 class="center-align">Squad</h3>
+    <div class="container margintop20">
+      <ul class="collapsible" id="player-club">
+
+      </ul>
+    </div>
+  </main>
+
+  <footer class="page-footer indigo darken-2">
+    <div class="footer-copyright">
+      <div class="row justify-center">
+        <div class="col">
+          &copy; 2020 copyright</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/materialize.min.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/match.js"></script>
+  <script src="js/standing.js"></script>
+  <script src="js/club.js"></script>
+  <script src="js/idb.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/swregister.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      getClubById();
+      $('.collapsible').collapsible();
+    });
+  </script>
+
+</body>
+
+</html>

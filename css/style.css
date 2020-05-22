@@ -1,0 +1,54 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.carousel .carousel-item{
+    width:100%;
+}
+
+.team-name {
+  font-weight: bold;
+  color: black !important;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+}
+
+.logo-detail {
+  width: 150px;
+  height: 150px;
+}
+
+.margintop20 {
+  margin-top: 20px;
+}
+
+.tabs .tab a {
+  color: #8c9eff ;
+  /*Custom Text Color*/
+}
+
+.tabs .tab a:hover {
+  color:#536dfe;
+  /*Custom Color On Hover*/
+}
+
+.tabs .tab a:focus.active {
+  color:#304ffe ;
+  /*Custom Text Color While Active*/
+  background-color: #536dfe3d;
+  /*Custom Background Color While Active*/
+}
+
+.tabs .indicator {
+  background-color:#536dfe;
+  /*Custom Color Of Indicator*/
+}
