@@ -1,4 +1,4 @@
-const base_url = "https://api.football-data.org/v2/";
+const base_url = "https://api.football-data.org/v4/";
 const premier_league = 2021;
 const team_uri = `${base_url}teams/`;
 const mathes_finished_uri = `${base_url}competitions/${premier_league}/matches?status=FINISHED`;
@@ -9,7 +9,7 @@ const fetchApi = function (url) {
   return fetch(url, {
     method: "GET",
     headers: {
-      "X-Auth-Token": "da7ee0fa7bd2480fa6c74d8542da60ca"
+      "X-Auth-Token": "f9787328b59348c78ac1e33276519076"
     }
   })
 }
