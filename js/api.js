@@ -9,6 +9,8 @@ const fetchApi = function (url) {
   return fetch(url, {
     method: "GET",
     headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Headers": "Content-Type, Authorization",
       "X-Auth-Token": "f9787328b59348c78ac1e33276519076"
     }
   })
