@@ -2,25 +2,22 @@ function standingData(data) {
   data.standings.forEach(function (standing) {
     standing.table.forEach(function (placement) {
       let table = "";
-      let logo = placement.team.crestUrl.replace(
-        /^http:\/\//i,
-        "https://"
-      );
+      let logo = placement.team.crest;
       table += `
           <tr>
-            <td class="center-align team-name">${placement.position}.</td>
-            <td class="center-align">
+            <td>${placement.position}.</td>
+            <td>
               <a href="detailclub.html?utm_id=${placement.team.id}"><img src="${logo}" class="logo"></a>
             </td>
             <td>
               <a href="detailclub.html?id=${placement.team.id}">${placement.team.name}</a>
             </td>
-            <td class="center-align">${placement.playedGames}</td>
-            <td class="center-align">${placement.won}</td>
-            <td class="center-align">${placement.draw}</td>
-            <td class="center-align">${placement.lost}</td>
-            <td class="center-align">${placement.goalDifference}</td>
-            <td class="center-align">${placement.points}</td>
+            <td>${placement.playedGames}</td>
+            <td>${placement.won}</td>
+            <td>${placement.draw}</td>
+            <td>${placement.lost}</td>
+            <td>${placement.goalDifference}</td>
+            <td>${placement.points}</td>
           </tr>
         `;
 

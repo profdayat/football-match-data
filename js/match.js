@@ -26,11 +26,11 @@ function matchData(data) {
         <div class="card-stacked">
           <div class="card-content">
             <p><b>Status</b> ${match.status}</p>
-            <p><b>KickOff</b> ${match.utcDate}</p>
+            <p><b>KickOff</b> ${match.utcDate.split('T')[1].split('.')[0].split(':')[1]}:${match.utcDate.split('T')[1].split('.')[0].split(':')[0]} ${match.utcDate.split('T')[0].split('-').reverse().join('-')}</p>
             <p><b>Full Time</b></p>
-            <p>${match.score.fullTime.homeTeam} : ${match.score.fullTime.awayTeam}</p>
+            <p>${match.score.fullTime.home} : ${match.score.fullTime.away}</p>
             <p><b>Half Time</b></p>
-            <p>${match.score.halfTime.homeTeam} : ${match.score.halfTime.awayTeam}</p>
+            <p>${match.score.halfTime.home} : ${match.score.halfTime.away}</p>
           </div>
         </div>
       </div>
@@ -48,12 +48,12 @@ function matchData(data) {
         matchDay: matches[i].matchday,
         homeName: matches[i].homeTeam.name,
         awayName: matches[i].awayTeam.name,
-        kickOff: matches[i].utcDate,
+        kickOff: `${matches[i].utcDate.split('T')[1].split('.')[0].split(':')[1]}:${matches[i].utcDate.split('T')[1].split('.')[0].split(':')[0]} ${matches[i].utcDate.split('T')[0].split('-').reverse().join('-')}`,
         status: matches[i].status,
-        scoreFullHome: matches[i].score.fullTime.homeTeam,
-        scoreFullAway: matches[i].score.fullTime.awayTeam,
-        scoreHalfHome: matches[i].score.halfTime.homeTeam,
-        scoreHalfAway: matches[i].score.halfTime.awayTeam,
+        scoreFullHome: matches[i].score.fullTime.home,
+        scoreFullAway: matches[i].score.fullTime.away,
+        scoreHalfHome: matches[i].score.halfTime.home,
+        scoreHalfAway: matches[i].score.halfTime.away,
       }
       addMatchFinish(saveMatchFinish);
     }
@@ -73,12 +73,12 @@ function matchDataSchedul(data) {
 
   matches.forEach(match => {
 
-    if (match.score.fullTime.homeTeam == null && match.score.fullTime.awayTeam == null
-      && match.score.halfTime.homeTeam == null && match.score.halfTime.awayTeam == null) {
-      match.score.fullTime.homeTeam = 0;
-      match.score.fullTime.awayTeam = 0;
-      match.score.halfTime.homeTeam = 0;
-      match.score.halfTime.awayTeam = 0;
+    if (match.score.fullTime.home == null && match.score.fullTime.away == null
+      && match.score.halfTime.home == null && match.score.halfTime.away == null) {
+      match.score.fullTime.home = 0;
+      match.score.fullTime.away = 0;
+      match.score.halfTime.home = 0;
+      match.score.halfTime.away = 0;
     }
 
     matchHTML += `
@@ -103,11 +103,11 @@ function matchDataSchedul(data) {
         <div class="card-stacked">
           <div class="card-content">
             <p><b>Status</b> ${match.status}</p>
-            <p><b>KickOff</b> ${match.utcDate}</p>
+            <p><b>KickOff</b> ${match.utcDate.split('T')[1].split('.')[0].split(':')[1]}:${match.utcDate.split('T')[1].split('.')[0].split(':')[0]} ${match.utcDate.split('T')[0].split('-').reverse().join('-')}</p>
             <p><b>Full Time</b></p>
-            <p>${match.score.fullTime.homeTeam} : ${match.score.fullTime.awayTeam}</p>
+            <p>${match.score.fullTime.home} : ${match.score.fullTime.away}</p>
             <p><b>Half Time</b></p>
-            <p>${match.score.halfTime.homeTeam} : ${match.score.halfTime.awayTeam}</p>
+            <p>${match.score.halfTime.home} : ${match.score.halfTime.away}</p>
           </div>
         </div>
       </div>
@@ -124,12 +124,12 @@ function matchDataSchedul(data) {
         matchDay: matches[i].matchday,
         homeName: matches[i].homeTeam.name,
         awayName: matches[i].awayTeam.name,
-        kickOff: matches[i].utcDate,
+        kickOff: `${matches[i].utcDate.split('T')[1].split('.')[0].split(':')[1]}:${matches[i].utcDate.split('T')[1].split('.')[0].split(':')[0]} ${matches[i].utcDate.split('T')[0].split('-').reverse().join('-')}`,
         status: matches[i].status,
-        scoreFullHome: matches[i].score.fullTime.homeTeam,
-        scoreFullAway: matches[i].score.fullTime.awayTeam,
-        scoreHalfHome: matches[i].score.halfTime.homeTeam,
-        scoreHalfAway: matches[i].score.halfTime.awayTeam,
+        scoreFullHome: matches[i].score.fullTime.home,
+        scoreFullAway: matches[i].score.fullTime.away,
+        scoreHalfHome: matches[i].score.halfTime.home,
+        scoreHalfAway: matches[i].score.halfTime.away,
       }
       addMatchScheduled(saveMatchFinish);
     }
