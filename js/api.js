@@ -1,4 +1,4 @@
-const cors_proxy_dayat_url = "https://proxy-cors-dayat-production.up.railway.app";
+const cors_proxy_dayat_url = "https://proxy-cors-dayat.netlify.app";
 const base_url = `${cors_proxy_dayat_url}/https://api.football-data.org/v4/`;
 const premier_league = 2021;
 const team_uri = `${base_url}teams/`;
